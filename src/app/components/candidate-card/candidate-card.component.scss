@@ -1,0 +1,45 @@
+:host {
+  flex-grow: 1;
+  min-width: 300px;
+  width: 30%;
+}
+.candidate-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--candidate-background);
+  &.junior {
+    background-color: #8cc0f7;
+  }
+  &.senior {
+    background-color: #f74131;
+  }
+  .label {
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: white;
+    &.junior {
+      color: #8cc0f7;
+    }
+    &.intermediate {
+      color: black;
+    }
+    &.senior {
+      color: #f74131;
+    }
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+    &__name {
+      display: flex;
+      flex-direction: row;
+    }
+    &__more {
+      cursor: pointer;
+    }
+  }
+}

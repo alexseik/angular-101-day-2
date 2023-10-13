@@ -17,11 +17,11 @@ import { Candidate } from '../../models/candidate.model';
 
 @Component({
   selector: 'app-candidate',
-  templateUrl: './candidate.component.html',
-  styleUrls: ['./candidate.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: './candidate-card.component.html',
+  styleUrls: ['./candidate-card.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class CandidateComponent
+export class CandidateCardComponent
   implements
     OnChanges,
     OnInit,
@@ -34,6 +34,8 @@ export class CandidateComponent
   @Input() candidate!: Candidate;
 
   @Output() select = new EventEmitter<Candidate>();
+
+  showMoreSkills = false;
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes', changes);
@@ -74,5 +76,9 @@ export class CandidateComponent
       return 'black';
     }
     return 'white';
+  }
+
+  toggleMoreSkills() {
+    this.showMoreSkills = !this.showMoreSkills;
   }
 }
