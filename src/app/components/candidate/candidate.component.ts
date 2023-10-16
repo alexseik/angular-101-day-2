@@ -58,6 +58,7 @@ export class CandidateComponent
   public surname: string = '';
   public cssClasses: any = {};
   public colorStyle: string = '';
+  showMoreSkills = false;
   private _candidate!: Candidate;
 
   ngOnChanges(changes: SimpleChanges) {
@@ -108,5 +109,9 @@ export class CandidateComponent
       : this.candidate.experience <= 5
       ? 'midlevel'
       : 'senior';
+  }
+
+  toggleMoreSkills() {
+    this.showMoreSkills = !this.showMoreSkills;
   }
 }
