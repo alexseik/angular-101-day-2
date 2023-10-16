@@ -1,6 +1,6 @@
 <div [ngClass]="cssClasses" [style.color]="colorStyle">
-  <h2>{{ name }}</h2>
-  <h3>{{ surname }}</h3>
+  <h2>{{ name | capitalize }}</h2>
+  <h3>{{ surname | capitalize }}</h3>
   <p><strong>Age:</strong>{{ candidate.age }}</p>
   <p><strong>Position:</strong>{{ candidate.position }}</p>
   <p><strong>Experience:</strong>{{ candidate.experience }}</p>
@@ -45,5 +45,11 @@
       </ng-template>
     </ng-template>
   </div>
+  <p>
+    <strong
+      >Minimum salary:
+      {{ candidate.salary | currency : "EUR" : "€" : "1.0-0" : "en" }}</strong
+    >
+  </p>
   <p><button data-testid="candidate-edit" (click)="doEdit()">Edit</button></p>
 </div>

@@ -4,5 +4,6 @@ export interface Candidate {
   age: number;
   position: string;
   experience: number;
+  salary: number;
   skills: string[];
 }

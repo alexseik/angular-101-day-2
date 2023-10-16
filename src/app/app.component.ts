@@ -18,18 +18,20 @@ export class AppComponent implements OnInit {
   candidates: Candidate[] = [
     {
       id: 1,
-      name: 'José Pérez',
+      name: 'josé  pérez',
       age: 25,
       position: 'Desarrollador Junior',
       experience: 1,
+      salary: 20000,
       skills: ['Java', 'SQL'],
     },
     {
       id: 2,
-      name: 'Paco López',
+      name: 'paco López',
       age: 40,
       position: 'Desarrollador Senior',
       experience: 15,
+      salary: 40000,
       skills: ['Java', 'SQL', 'Oracle', 'PL/SQL', 'Cobol', 'C++'],
     },
     {
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit {
       age: 30,
       position: 'Desarrolladora Intermedia',
       experience: 4,
+      salary: 30000,
       skills: ['Java', 'SQL', 'Oracle', 'PL/SQL', 'Cobol', 'C++'],
     },
   ];

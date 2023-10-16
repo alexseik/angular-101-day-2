@@ -39,7 +39,7 @@ export class CandidateComponent
       throw new Error('The name does not contain a space');
     }
     this.name = candidate.name.slice(0, index + 1);
-    this.surname = candidate.name.slice(index) + 1;
+    this.surname = candidate.name.slice(index + 1);
     this.cssClasses = {
       animate: false,
       'candidate-card': true,

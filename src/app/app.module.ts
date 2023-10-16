@@ -8,9 +8,10 @@ import { CandidateListComponent } from './components/candidate-list/candidate-li
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './directives/highlight.directive';
 import { ScaleDirective } from './directives/scale.directive';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
-  declarations: [AppComponent, CandidateComponent, CandidateListComponent, HighlightDirective, ScaleDirective],
+  declarations: [AppComponent, CandidateComponent, CandidateListComponent, HighlightDirective, ScaleDirective, CapitalizePipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
