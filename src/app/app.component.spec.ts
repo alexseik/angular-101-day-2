@@ -3,11 +3,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { CandidateComponent } from './components/candidate/candidate.component';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, FormsModule],
       declarations: [AppComponent, CandidateComponent, CandidateListComponent],
     })
   );

@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { CandidateComponent } from './components/candidate/candidate.component';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './directives/highlight.directive';
+import { ScaleDirective } from './directives/scale.directive';
 
 @NgModule({
-  declarations: [AppComponent, CandidateComponent, CandidateListComponent],
+  declarations: [AppComponent, CandidateComponent, CandidateListComponent, HighlightDirective, ScaleDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,

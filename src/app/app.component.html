@@ -23,9 +23,19 @@
     >
       <span>{{ i }}</span>
       <app-candidate
+        appScale
+        *ngIf="i % 2 === 0; else odd"
         [candidate]="candidate"
         (select)="selectCandidate($event)"
       ></app-candidate>
+      <ng-template #odd>
+        <app-candidate
+          appHighlight
+          appScale
+          [candidate]="candidate"
+          (select)="selectCandidate($event)"
+        ></app-candidate>
+      </ng-template>
     </div>
   </app-candidate-list>
 </div>
