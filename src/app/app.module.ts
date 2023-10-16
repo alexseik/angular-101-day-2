@@ -3,13 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CandidateCardComponent } from './components/candidate-card/candidate-card.component';
+import { CandidateComponent } from './components/candidate/candidate.component';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
 
 @NgModule({
-  declarations: [AppComponent, CandidateCardComponent, CandidateListComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    CandidateComponent,
+    CandidateListComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

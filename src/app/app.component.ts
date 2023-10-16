@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Candidate } from './models/candidate.model';
+import { CandidateComponent } from './components/candidate/candidate.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'candidates-frontend';
+
+  @ViewChildren(CandidateComponent)
+  private candidateComps!: CandidateComponent[];
+
+  public candidatesLength: number = 0;
 
   candidates: Candidate[] = [
     {
@@ -59,6 +65,15 @@ export class AppComponent {
         );
       }
     }
+  }
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.candidatesLength =
+        !!this.candidateComps && 'length' in this.candidateComps
+          ? this.candidateComps.length
+          : 0;
+    });
   }
 
   changeInput(event: Event) {

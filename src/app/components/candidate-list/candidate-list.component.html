@@ -1,2 +1,4 @@
 <ng-content select="[title]"></ng-content>
-<div class="candidate-list"><ng-content></ng-content></div>
+<div class="candidate-list" [ngClass]="{ reverse }">
+  <ng-content></ng-content>
+</div>
