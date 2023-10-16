@@ -5,18 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CandidateComponent } from './components/candidate/candidate.component';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CandidateComponent,
-    CandidateListComponent
-  ],
+  declarations: [AppComponent, CandidateComponent, CandidateListComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule /* contiene ngModel */,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
