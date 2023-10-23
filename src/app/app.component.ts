@@ -2,11 +2,31 @@ import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Candidate } from './models/candidate.model';
 import { CandidateComponent } from './components/candidate/candidate.component';
 import { CandidatesService } from './services/candidates.service';
+import { APP_CONFIG } from './config/app.config';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [
+    {
+      provide: APP_CONFIG,
+      useValue: {
+        candidates: [
+          {
+            id: 1,
+            name: 'josé    pérez',
+            age: 25,
+            position: 'Desarrollador Junior',
+            experience: 1,
+            salary: 20000,
+            skills: ['Java', 'SQL'],
+          },
+        ],
+      },
+    },
+    CandidatesService,
+  ],
 })
 export class AppComponent implements OnInit {
   title = 'candidates-frontend';

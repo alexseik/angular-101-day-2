@@ -1,41 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Candidate } from '../models/candidate.model';
+import { APP_CONFIG, AppConfig } from '../config/app.config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CandidatesService {
-  private candidates: Candidate[] = [
-    {
-      id: 1,
-      name: 'josé    pérez',
-      age: 25,
-      position: 'Desarrollador Junior',
-      experience: 1,
-      salary: 20000,
-      skills: ['Java', 'SQL'],
-    },
-    {
-      id: 2,
-      name: 'Paco López',
-      age: 40,
-      position: 'Desarrollador Senior',
-      experience: 15,
-      salary: 40000,
-      skills: ['Java', 'SQL', 'Oracle', 'PL/SQL', 'Cobol', 'C++'],
-    },
-    {
-      id: 3,
-      name: 'Mireia García',
-      age: 30,
-      position: 'Desarrolladora Intermedia',
-      experience: 4,
-      salary: 30000,
-      skills: ['Java', 'SQL', 'Oracle', 'PL/SQL', 'Cobol', 'C++'],
-    },
-  ];
+  candidates: Candidate[] = [];
 
-  constructor() {}
+  constructor(@Inject(APP_CONFIG) private config: AppConfig) {
+    if (this.config && this.config.candidates) {
+      this.candidates = this.config.candidates;
+    }
+  }
 
   getCandidates() {
     return this.candidates;
