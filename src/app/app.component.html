@@ -2,11 +2,7 @@
   <div>{{ candidateName }}</div>
   <div>
     <label for="candidate-skill">Candidate Skill</label>
-    <input
-      type="number"
-      id="candidate-skill"
-      [(ngModel)]="candidateExperience"
-    />
+    <input type="number" id="candidate-skill" (input)="changeInput($event)" />
     <button (click)="unselect()">X</button>
   </div>
   <button (click)="list.toggleDirection()">Cambiar lista</button>
@@ -19,7 +15,11 @@
     <h2 title>Lista de candidatos</h2>
     <div
       class="candidate-box"
-      *ngFor="let candidate of candidates; let i = index; trackBy: trackById"
+      *ngFor="
+        let candidate of candidates.getCandidates();
+        let i = index;
+        trackBy: trackById
+      "
     >
       <span>{{ i }}</span>
       <app-candidate
