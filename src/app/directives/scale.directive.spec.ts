@@ -23,6 +23,7 @@ describe('ScaleDirective', () => {
   });
 
   it('should set the style initially', () => {
-    expect(div.style['transform']).toBe('');
+    div.dispatchEvent(new Event('mouseenter'));
+    expect(div.style['transform']).toBe('scale(1.1)');
   });
 });
