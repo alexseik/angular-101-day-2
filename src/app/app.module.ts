@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CandidateComponent } from './components/candidate/candidate.component';
@@ -11,6 +12,8 @@ import { ScaleDirective } from './directives/scale.directive';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { APP_CONFIG, Config } from './config/app.config';
 import { CandidatesService } from './services/candidates.service';
+
+registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [

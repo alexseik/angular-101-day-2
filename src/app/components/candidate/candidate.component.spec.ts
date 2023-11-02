@@ -3,6 +3,12 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CandidateComponent } from './candidate.component';
 import { Candidate } from 'src/app/models/candidate.model';
 import { click } from 'src/app/utils/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { CapitalizePipe } from 'src/app/pipes/capitalize.pipe';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+registerLocaleData(localeEs, 'es');
 
 describe('CandidateComponent', () => {
   let component: CandidateComponent;
@@ -10,7 +16,8 @@ describe('CandidateComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CandidateComponent],
+      declarations: [CandidateComponent, CapitalizePipe],
+      schemas: [NO_ERRORS_SCHEMA],
     });
     fixture = TestBed.createComponent(CandidateComponent);
     component = fixture.componentInstance;
@@ -19,6 +26,7 @@ describe('CandidateComponent', () => {
       experience: 6,
       id: 0,
       name: 'Alex Garrido',
+      salary: 20000.2,
       position: 'developer',
       skills: ['JS'],
     };

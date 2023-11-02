@@ -4,12 +4,20 @@ import { AppComponent } from './app.component';
 import { CandidateComponent } from './components/candidate/candidate.component';
 import { CandidateListComponent } from './components/candidate-list/candidate-list.component';
 import { FormsModule } from '@angular/forms';
+import { CapitalizePipe } from 'src/app/pipes/capitalize.pipe';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, FormsModule],
-      declarations: [AppComponent, CandidateComponent, CandidateListComponent],
+      declarations: [
+        AppComponent,
+        CandidateComponent,
+        CandidateListComponent,
+        CapitalizePipe,
+      ],
     })
   );
 

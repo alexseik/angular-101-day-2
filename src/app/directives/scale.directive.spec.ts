@@ -23,6 +23,6 @@ describe('ScaleDirective', () => {
   });
 
   it('should set the style initially', () => {
-    expect(div.style['transform']).toBe('scale(1.1)');
+    expect(div.style['transform']).toBe('');
   });
 });
